@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <button class="redStyle">Нажать</button>
+    <button class="langs">Языки программирования</button>
+
+    <button class="lb">Жми1</button>
+    <button class="lb">Жми2</button>
+    <button class="lb">Жми3</button>
+    <script type="text/javascript">
+        $(function () {
+            $('button.redStyle').bind('click', function () {
+                alert('Привет мир!');
+            });
+        });
+        $(function () {
+            $('button.langs').bind('click', function () {
+                if ($(this).hasClass("langs")) {
+                    $('body').append('<ul><li>Java</li><li>JavaScript</li></ul>');
+                }
+                alert('Обработчик события click');
+            });
+        });
+
+        // $('button').unbind();
+
+        $(function () {
+            $('button.lb').one('click', function (e) {
+                $(this).css('color', 'red');
+                alert('Обработчик для кнопки: ' + $(this).text());
+            });
+        });
+    </script>
+</body>
+
+</html>

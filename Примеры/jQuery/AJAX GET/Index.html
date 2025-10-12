@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <script>
+        var category_url = `http://www.omdbapi.com/?t=Heat&apikey=31487af4`;
+        let bookDiv = '';
+        $.ajax({
+            url: category_url,
+            dataType: "json"
+        }).done(function (data) {
+            console.log(data);
+        }).fail(function(){console.log("ошибка");});
+    </script>
+</body>
+
+</html>

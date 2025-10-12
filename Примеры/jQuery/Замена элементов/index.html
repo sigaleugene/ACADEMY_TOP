@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <div id="list">
+        <div class="lang">Java</div>
+        <div class="lang">C/C++</div>
+        <div class="lang">PHP</div>
+    </div>
+
+
+
+    <script>
+        $('div.lang').replaceWith(function () {
+            return '<li class="lang">' + $(this).text() + "</li>";
+        });
+        $('div#list').replaceWith(function () {
+            return '<ol>' + $(this).html() + "</ol>";
+        }); 
+        	
+        //$('<div class="lan">Элемент списка</li>').replaceAll('li.lang');
+    </script>
+</body>
+
+</html>

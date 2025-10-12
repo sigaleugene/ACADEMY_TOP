@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+</head>
+
+<body>
+    <ul>
+        <li class="lang">Java</li>
+        <li class="lang">C/C++</li>
+        <li class="lang">PHP</li>
+        <li class="lang">JavaScript</li>
+    </ul>
+    <script>
+        //Метод remove	
+        $('li:even').remove();
+        //Метод detach
+        // удаляем из списка первый элемент, сохраняя его в переменной item
+        var item = $('li:first').detach();
+        // вставляем его в конец списка
+        $('ul').append(item);
+        //Метод empty
+        $('ul').empty();
+    </script>
+</body>
+
+</html>

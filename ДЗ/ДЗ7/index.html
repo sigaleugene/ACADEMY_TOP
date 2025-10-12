@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="script.js"></script>
+    <input type="text" id="name" name="name" size="14" onkeydown="return checkEnter(event)">
+
+    <button type="button" onclick="window.closeMe.showModal()">
+        Открыть как модалку
+    </button>
+    <dialog  id="closeMe" aria-labelledby="heading">
+        <h2 id="heading">Закрой меня! 🙏</h2>
+        <p>Результат этих кнопок одинаковый.</p>
+
+        <button type="button" onclick="window.closeMe.close()">
+            Закрыть с помощью JavaScript
+        </button>
+
+        <form method="dialog">
+            <!-- Если у тега <button> не указан type, то по-умолчанию
+    он будет type="submit" ! -->
+            <button>
+                Закрыть с помощью формы
+            </button>
+        </form>
+    </dialog>
+
+</body>
+
+</html>

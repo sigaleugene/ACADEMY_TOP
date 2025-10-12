@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <img src="https://cdnn21.img.ria.ru/images/90089/25/900892546_0:0:0:0_0x0_100_0_0_a2857e3ce704bf6660b4c8a47847fae3.jpg.webp"  id="ars" /><br>
+<button id="fadeIn">Отобразить</button>
+<button id="fadeOut">Cкрыть</button>
+<script type="text/javascript">
+$(function() {
+    $('#ars').fadeTo(2000,0.6);
+    $('#fadeIn').click(function(){
+         $('#ars').fadeIn('slow', function(){alert('Отображено');});
+    });
+    $('#fadeOut').click(function(){
+         $('#ars').fadeOut(2000, function(){alert('Скрыто');});
+    });
+});
+</script>
+</body>
+</html>

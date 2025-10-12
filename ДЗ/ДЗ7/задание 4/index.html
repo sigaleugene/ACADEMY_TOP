@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapMine {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .wrap {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .trafficLight {
+            display: flex;
+            flex-direction: column;
+            margin: 100px;
+            align-items: center;
+        }
+
+        .light {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border-color: black;
+            border-width: 2px;
+            border-style: solid;
+        }
+
+        .lightRed {
+            background-color: red;
+        }
+
+        .lightYellow {
+            background-color: yellow;
+        }
+
+        .lightGreen {
+            background-color: green;
+        }
+
+        .lightBlue {
+            background-color: blue;
+        }
+
+        .lightВarkorchid {
+            background-color: darkorchid;
+        }
+
+        .lightOff {
+            background-color: gray;
+        }
+
+        button {
+            margin: auto;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapMine">
+        <div class="wrap">
+            <div class="trafficLight" id="TF">
+                <div class="light lightRed" id="redLight"></div>
+                <div class="light lightYellow lightOff" id="yellowLight"></div>
+                <div class="light lightGreen lightOff" id="greenLight"></div>
+                <!-- <div class="light lightBlue lightOff" id="blueLight" name="blueLight"></div> -->
+            </div>
+            <button id="btn" name="btn">Переключить</button>
+        </div>
+       
+        <script src="script.js"></script>
+    </div>
+</body>
+
+</html>

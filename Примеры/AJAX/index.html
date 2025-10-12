@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Метод LOAD</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+   <div> 
+   <input type="text" id="title" name="title"/>
+   <button type='button'  onclick="getPoster()">getPoster</button>
+</div>
+
+<div >
+    <img id='poster' />
+</div>
+    <script>
+
+        function getPoster() {
+            const image = document.getElementById('poster');
+            const xhr = new XMLHttpRequest();
+            xhr.onload = () => {
+                if (xhr.status == 200) {
+                    const json = xhr.response;
+                    console.log(json.Poster);
+                    image.src = json.Poster;
+           
+                }
+            };
+            let filmName = document.getElementById('title').value;
+            let request = `http://www.omdbapi.com/?t=${filmName}&apikey=31487af4`;
+            
+            xhr.open("GET",request );// "http://www.omdbapi.com/?t=Rambo&apikey=31487af4");// GET-запрос к /data
+            xhr.responseType = "json";              // устанавливаем тип ответа
+            xhr.setRequestHeader("Accept", "application/json");    // принимаем только json
+            xhr.send();     // выполняем запрос
+        }
+     
+
+
+    </script>
+</body>
+
+</html>

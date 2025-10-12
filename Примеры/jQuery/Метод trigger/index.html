@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Слово</td>
+            <td>Перевод</td>
+        </tr>
+        <tr>
+            <td>Cabbage</td>
+            <td>Капуста</td>
+        </tr>
+        <tr>
+            <td>Carrot</td>
+            <td>Морковь</td>
+        </tr>
+        <tr>
+            <td>Potato</td>
+            <td>Картофель</td>
+        </tr>
+        <tr>
+            <td>Tomato</td>
+            <td>Помидор</td>
+        </tr>
+    </table>
+    <br>
+    <button>Выделить</button>
+    <button>Снять выделение</button>
+    <script type="text/javascript">
+        $(function () {
+            $('table').on('mouseenter', 'tr', function (e) {
+                $(this).css('background-color', 'silver');
+            }).on('mouseout', 'tr', function (e) {
+                $(this).css('background-color', 'white');
+            });
+
+            $('button').first().bind('click', function () {
+                $('tr').trigger('mouseenter');
+            });
+
+            $('button').last().bind('click', function () {
+                $('tr').trigger('mouseout');
+            });
+
+        });
+    </script>
+</body>
+
+</html>

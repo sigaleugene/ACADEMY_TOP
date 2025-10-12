@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+</head>
+<body>
+    <ul>
+        <li class="lang">Java</li>
+        <li class="lang">C/C++</li>
+        <li class="lang">PHP</li>
+    </ul>
+    <script>
+        // добавление с помощью кода разметки
+        $('li.lang').first().before('<li class="lang">JavaScript</li>');
+        
+        // добавление нового элемента html
+        var vbItem = document.createElement('li');
+        vbItem.innerHTML='Visual Basic';
+        $('li.lang').first().before(vbItem);
+    </script>
+</body>
+</html>

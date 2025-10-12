@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <button>Кнопка 1</button>
+    <button>Кнопка 2</button>
+    <script type="text/javascript">
+        $(function () {
+            $('button').first().click(function () {
+                $(this).css('background-color', 'silver');
+            });
+
+            $('button').last().click(function () {
+                $('button').first().click();
+            });
+        });
+    </script>
+</body>
+
+</html>

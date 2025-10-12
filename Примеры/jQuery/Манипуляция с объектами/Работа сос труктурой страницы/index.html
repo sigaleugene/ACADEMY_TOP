@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin-top: 5px;
+            font-size: medium;
+        }
+
+        div {
+
+            background-color: chartreuse;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <ul id='langs'>
+        <li>Java</li>
+        <li>C/C++</li>
+        <li>PHP</li>
+    </ul>
+
+
+    <ul>
+        <li>
+            <button onclick="
+            var newList=$('<ul><li>Item1</li><li>Item2</li></ul>');
+            console.log(newList.html());">
+                Создание элемента
+            </button>
+        </li>
+
+        <li><button onclick="
+            var newList=$('ul').first().clone();
+            console.log(newList.html());
+            ">
+                Клонирование элементов
+            </button>
+        </li>
+
+        <li><button onclick="
+            $('#langs').prepend('<li>C#</li>');
+            ">
+                Вставка строки кода
+            </button>
+        </li>
+
+        <li><button onclick="
+           var jsItem = document.createElement('li');
+                jsItem.innerHTML='JavaScript';
+                $('#langs').prepend(jsItem);
+            ">
+                Вставка элемента
+            </button>
+        </li>
+
+        <li><button onclick="
+            var vbItem = $('<li>Visual Basic</li>');
+            $('#langs').prepend(vbItem);
+             ">
+                Вставка объекта jquery
+            </button>
+        </li>
+
+        <li><button onclick="
+           var list = document.getElementById('langs');
+           $('<li>Java</li>').appendTo(list);
+             ">
+                Вставка в элемент html
+            </button>
+        </li>
+        
+        <li><button onclick="
+            $('#langs').wrap('<div></div>');
+              ">
+                 Обертывание 
+             </button>
+         </li>
+
+         <li><button onclick="
+            $('#langs').wrapAll('<div></div>');
+              ">
+                 Обертывание wrapAll
+             </button>
+         </li>
+
+         <li><button onclick="
+            $('li').wrapInner('<p></p>');
+              ">
+                 Обертывание wrapInner
+             </button>
+         </li>
+
+
+
+
+
+    </ul>
+
+
+
+</body>
+
+</html>

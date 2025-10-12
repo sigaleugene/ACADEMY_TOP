@@ -1,0 +1,57 @@
+Управление текстом элемента
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+    const header = document.getElementById("header");
+    // получаем текст элемента
+    console.log(header.textContent);  // Home Page
+    // изменяем текст элемента
+    header.textContent = "Hello World";
+    </script>
+</body>
+</html>
+==================================================
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+    const header = document.getElementById("header");
+    // получаем текст элемента
+    console.log(header.innerText);  // Home Page
+    // изменяем текст элемента
+    header.innerText = "Hello World2";
+    </script>
+</body>
+</html>
+
+Управление кодом HTML
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+    const header = document.getElementById("header");
+    // получаем html-код элемента
+    console.log(header.innerHTML);  // Home Page
+    // изменяем html-код элемента
+    header.innerHTML = "<span style='color:navy;'>Hello World</span>";
+    </script>
+</body>
+</html>

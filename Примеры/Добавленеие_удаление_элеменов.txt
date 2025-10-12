@@ -1,0 +1,120 @@
+
+Добавление элементов
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> TEST </title>
+</head>
+<body>
+    <script>
+    constheader = document.createElement("h1");     // создаем заголовок <h1>
+    const headerText = document.createTextNode("Hello World");  // создаем текстовый узел
+    header.appendChild(headerText); // добавляем в элемент h1 текстовый узел
+    document.body.appendChild(header);  // // добавляем элемент h1 на страницу в элемент body
+    </script>
+</body>
+</html>
+
+===================================================================
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TOP </title>
+</head>
+<body>
+    <p>Text 1</p>
+    <p>Text 2</p>
+    <script>
+    const header = document.createElement("h1");        // создаем заголовок <h1>
+    header.textContent = "Page Header"; // определяем текст элемента
+    // получаем первый параграф
+    const firstP = document.body.firstElementChild;
+    // добавляем элемент h1 перед параграфом firstP
+    document.body.insertBefore(header, firstP); 
+    </script>
+</body>
+</html>
+
+Копирование элемента
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>TOP </title>
+</head>
+<body>
+    <div id="article">
+        <h1>Home Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+    const article = document.getElementById("article");
+    // получаем последний параграф
+    const lastP = article.lastElementChild;
+    // клонируем элемент lastP
+    const newLastP = lastP.cloneNode(true);
+    // изменяем текст
+    newLastP.textContent = "Publication Date: 28/10/2023";
+    // добавляем в конец элемента article
+    article.appendChild(newLastP);
+    </script>
+</body>
+</html>
+
+Замена элемента
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <div id="article">
+        <p>Home Page</p>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+    const article = document.getElementById("article");
+    // находим узел, который будем заменять
+    // пусть это будет первый элемент
+    const oldNode = article.firstElementChild;
+    // создаем новый элемент
+    const newNode = document.createElement("h2");
+    // определяем для него текст
+    newNode.textContent = "Hello World";
+    // заменяем старый узел новым
+    article.replaceChild(newNode, oldNode);
+    </script>
+</body>
+</html>
+
+Удаление элемента
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <div id="article">
+        <h1>Home Page</h1>
+        <p>Text 1</p>
+        <p>Text 2</p>
+    </div>
+    <script>
+    const article = document.getElementById("article");
+    // находим узел, который будем удалять - последний параграф
+    const lastP = article.lastElementChild;
+    // удаляем узел
+    article.removeChild(lastP);
+    </script>
+</body>
+</html>

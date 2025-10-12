@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            margin-top: 5px;
+            font-size: medium;
+        }
+
+        div {
+
+            background-color: chartreuse;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <ul data-year="2010" data-description="lang">
+        <li>Java</li>
+        <li>C/C++</li>
+        <li>PHP</li>
+    </ul>
+    <div></div>
+
+    <ul>
+        <li><button onclick="$('li').css('font-weight', 'bold');"> Изменение стиля</button></li>
+        <li><button onclick="$('div').css('background-color', 
+        function(index, oldValue){
+            if(oldValue=='rgb(127, 255, 0)')
+            {
+
+                return 'red';
+            }
+            else
+            {
+  
+                return 'green';
+            }
+            });">
+            Изменение стиля с помощью функции</button></li>
+            <li><button onclick="
+                var div = $('div').first();
+                var newWidth=div.width()+150;
+                div.width(newWidth);
+                var newHeight = div.height()+50;
+                div.height(newHeight);">
+                    Изменение ширины и высоты</button></li>
+    </ul>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+Получение элементов по id
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1 id="header">Home Page</h1>
+    <script>
+        const headerElement = document.getElementById("header");
+        console.log("Text: ", headerElement.innerText); // Text:  Home Page
+    </script>
+</body>
+</html>
+
+Поиск по определенному тегу
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <p>Первый абзац</p>
+    <p>Второй абзац</p>
+    <script>
+        const paragraphs = document.getElementsByTagName("p");
+  
+        for (p of paragraphs) {
+            console.log(p.innerText);   // выводим текст параграфа
+        }
+    </script>
+</body>
+</html>
+
+Получение элементов по классу
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <p class="text">Page Text</p>
+    <p class="contacts">Email: supercorp@zmail.com</p> 
+    <p class="contacts">Phone: +1-234-567-8901</p>
+    <script>
+        const contacts = document.getElementsByClassName("contacts");
+  
+        for (contact of contacts) {
+            console.log(contact.innerText);
+        }
+    </script>
+</body>
+</html>
+
+Поиск элементов по атрибуту name
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <form>
+        <p>Language:</p>
+        <input type="radio" name="lang" value="Java">
+        <label>Java</label>
+        <br>
+        <input type="radio" name="lang" value="JavaScript" checked>
+        <label>JavaScript</label>
+        <br>
+        <input type="radio" name="lang" value="PHP">
+        <label>PHP</label>
+        <br>
+    </form>
+    <script>
+    // выбираем все элементы с атрибутом name="lang"
+    const langs = document.getElementsByName("lang");
+    for (lang of langs) {
+        console.log(lang.value);    // получаем значение атрибута value
+    }
+    </script>
+</body>
+</html>
+
+Поиск элементов по селектору CSS
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <div class="annotation">
+        <p>Аннотация статьи</p>
+    </div>
+    <div class="text">
+        <p>Первый абзац</p>
+        <p>Второй абзац</p>
+    </div>
+    <script>
+        const elem = document.querySelector(".annotation p");
+        console.log(elem.innerText);    // Аннотация статьи
+    </script>
+</body>
+</html>
+
+Поиск во вложенных элементах
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>METANIT.COM</title>
+</head>
+<body>
+    <div id="article">
+        <h1 id="header">Home Page</h1>
+        <p class="text">Page Text 1</p>
+        <p class="text">Page Text 2</p>
+    </div>
+    <div id="footer">
+        <p class="text">Footer Text</p>
+    </div>
+    <script>
+    // получаем элемент с id="article"
+    const article = document.getElementById("article");
+    // в этом элементе получаем все элементы с class="text"
+    const articleContent = article.getElementsByClassName("text");
+    for(p of articleContent){
+        console.log(p);
+    }
+    </script>
+</body>
+</html>

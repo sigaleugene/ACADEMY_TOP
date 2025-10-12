@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <button>Жми1</button>
+    <button>Жми2</button>
+    <script>
+        $(function () {
+            $('body').delegate('button', 'click', function (e) {
+                $(this).css('color', 'red');
+                alert('Обработчик для кнопки: ' + $(this).text());
+            });
+             
+            $('body').on('click', 'button', function(e){
+            $(this).css('color', 'red');
+            alert('Обработчик для кнопки: '+$(this).text());
+            });
+            
+
+            $('body').append('<button>Жми3</button>');
+        });
+
+       
+
+        // удаление обработчиков события click для кнопок
+        $('body').off('click', 'button');
+        // удаление всех обработчиков для элементов внутри тега body
+        $('body').off();
+    </script>
+</body>
+
+</html>

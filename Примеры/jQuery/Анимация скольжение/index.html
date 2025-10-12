@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <button id="slideUp">Скрыть</button>
+<button id="slideDown">Раскрыть</button>
+<script type="text/javascript">
+$(function() {
+    $('#slideUp').click(function(){
+         $(this).slideUp();
+    });
+    $('#slideDown').click(function(){
+         $('#slideUp').slideDown();
+    });
+});
+
+$(function() {
+    $('#slideUp').click(function(){
+         $(this).slideToggle('slow');
+    });
+    $('#slideDown').click(function(){
+         $('#slideUp').slideToggle(2000);
+    });
+});
+</script>
+</body>
+</html>

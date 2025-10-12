@@ -1,0 +1,35 @@
+<!DOCTYPE html5>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+        li {
+            margin-top: 5px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+<body>
+    <p>Работа с пользовательскими атрибутами</p>
+    <ul data-year="2010" data-description="lang">
+        <li>Java</li>
+        <li>C/C++</li>
+        <li>PHP</li>
+    </ul>
+   <script>
+        console.log($('ul').data('year')); 
+        console.log($('ul').data());
+
+    </script>
+   
+   
+    <ul>
+        <li><button onclick=" $('ul').first().data('year', '2012'); console.log($('ul').data('year'));"> Изменение атрибута</button></li>
+        <li><button onclick=" $('ul').first().removeData('year'); console.log($('ul').data());"> Удаление атрибута</button></li>
+    </ul>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Мир jQuery</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Слово</td>
+            <td>Перевод</td>
+        </tr>
+        <tr>
+            <td>Cabbage</td>
+            <td>Капуста</td>
+        </tr>
+        <tr>
+            <td>Carrot</td>
+            <td>Морковь</td>
+        </tr>
+        <tr>
+            <td>Potato</td>
+            <td>Картофель</td>
+        </tr>
+        <tr>
+            <td>Tomato</td>
+            <td>Помидор</td>
+        </tr>
+    </table>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            $("tr:even").css('background-color', 'silver');
+        });
+        $(function () {
+            var array = $("tr:even");
+            for (var i = 0; i < array.length; i++) {
+                console.log(i.toString() + ". " + array[i].innerHTML);
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset='utf-8'>
+<script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+<style>
+    #langs p {display:none;}
+    #langs p.first {display:block;}
+</style>
+</head>
+<body>
+<h3>Выбранный язык</h3>
+<div id="langs">
+    <p class='first'>Java</p>
+    <p>C/C++</p>
+    <p>PHP</p>
+    <p class='last'>JavaScript</p>
+</div>
+<button id="prev">Назад</button>
+<button id="next">Вперед</button>
+<script type="text/javascript">
+$(function() {
+    var current = $("div#langs p").first();
+    $('#next').click(function(){
+         $(current).not('.last').hide("fast", function() {
+            current = $(current).next('p');
+            $(current).show("fast");
+        });
+    });
+    $('#prev').click(function(){
+         $(current).not('.first').hide("fast", function() {
+            current = $(current).prev('p');
+            $(current).show("fast");
+        });
+    });
+});
+</script>
+</body>
+</html>

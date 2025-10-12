@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title> </title>
+    <style>
+    input {width: 150px;}
+    input:invalid {border-color: red; }
+    input:valid { border-color: green;}
+    </style>
+</head>
+<body>
+<form id="registerForm" name="registerForm" method="post" >
+<p>
+    <label for="email">E-mail:</label><br>
+    <input type="email" id="email" name="email" required>
+</p>
+<button type="submit" id="submit" name="submit">Register</button>
+</form>
+<script>
+const emailField = document.getElementById("email");  
+emailField.addEventListener("change", validateEmailMes);
+const emailErrors = document.getElementById("emailErrors");
+ 
+function validateEmail() {
+    console.log("Может валидироваться:", emailField.willValidate);
+    console.log("Значение отсутствует:", emailField.validity.valueMissing);
+    console.log("Значение валидно:", emailField.validity.valid);
+    console.log("Значение соответствует типу", emailField.validity.typeMismatch);
+    console.log(emailField.validationMessage);
+}
+function validateEmailMes() {
+    if(!emailField.validity.valid){
+        emailErrors.textContent = emailField.validationMessage;
+        emailErrors.style.display = "block";
+    }
+    else{
+        emailErrors.textContent = "";
+        emailErrors.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>

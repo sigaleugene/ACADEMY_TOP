@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.10.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li>Java</li>
+        <li>C/C++</li>
+        <li>JavaScript</li>
+    </ul>
+    <button id="show">Показать</button>
+    <button id="hide">Скрыть</button>
+    <script type="text/javascript">
+        // $(function () {
+        //     $('button#show').click(function () {
+        //         $('ul').show();
+        //     });
+        //     $('button#hide').click(function () {
+        //         $('ul').hide();
+        //     });
+        // });
+
+        $(function () {
+            $('button').click(function () {
+                $('ul').toggle();
+            });
+        }); A
+    </script>
+</body>
+
+</html>

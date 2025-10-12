@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="registerForm" name="registerForm" method="post" action="register">
+        <p>
+            <label for="username">Username:</label><br>
+            <input id="username" name="username" maxlength="20" minlength="3" required>
+        </p>
+        <p>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" min="10" max="110" required>
+        </p>
+        <button type="submit" id="submit" name="submit">Register</button>
+    </form>
+    <script>
+        const registerForm = document.registerForm;
+        const submit = registerForm.submit;
+        submit.addEventListener("click", validate);
+
+        function validate() {
+            if (!registerForm.username.checkValidity()) {
+                console.log("Username is not valid");
+            }
+            if (!registerForm.age.checkValidity()) {
+                console.log("Age is not valid");
+            }
+            if (!registerForm.checkValidity()) {
+                console.log("Form data is not valid");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Мир jQuery</title>
+</head>
+
+<body>
+    <div id="menu">
+        <p><a href="1.html" class="open">Ссылка 1</a></p>
+        <p><a href="2.html" class="open">Ссылка 2</a></p>
+    </div>
+    <p><a href="3.html" class="open">Ссылка 3</a></p>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            $(".open", "div#menu").css('background-color', 'silver');
+        });
+    </script>
+</body>
